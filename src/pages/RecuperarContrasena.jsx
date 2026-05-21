@@ -13,7 +13,7 @@ export default function RecuperarContrasena({ onVolver }) {
     setError('')
 
     const { error } = await supabase.auth.resetPasswordForEmail(correo, {
-      redirectTo: 'http://localhost:5173',
+      redirectTo: 'https://tramites-municipales-fwh8.vercel.app',
     })
 
     if (error) {
