@@ -29,6 +29,7 @@ export default function CargaDocumentos({ usuario, tramiteId, onVolver, onExito 
   }
 
   const handleSubir = async () => {
+    console.log('tramiteId recibido:', tramiteId)
     if (archivos.length === 0) {
       setError('Agregá al menos un archivo antes de continuar.')
       return
