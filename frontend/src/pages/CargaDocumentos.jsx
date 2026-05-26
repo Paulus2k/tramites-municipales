@@ -10,7 +10,7 @@ export default function CargaDocumentos({ usuario, tramiteId, onVolver, onExito 
   const handleArchivos = (e) => {
     const nuevos = Array.from(e.target.files)
     const validos = nuevos.filter(f => {
-      const tipoValido = ['application/pdf', 'image/jpeg', 'image/png'].includes(f.type)
+      const tipoValido = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg', ''].includes(f.type) || f.name.endsWith('.pdf') || f.name.endsWith('.jpg') || f.name.endsWith('.jpeg') || f.name.endsWith('.png')
       const tamañoValido = f.size <= 10 * 1024 * 1024
       return tipoValido && tamañoValido
     })
